@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-color: theme(colors.blue.400);
+    background-image: linear-gradient(
+        theme(colors.blue.300) 2px,
+        transparent 2px
+      ),
+      linear-gradient(90deg, theme(colors.blue.300) 2px, transparent 2px),
+      linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+    background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+  }
+}
+
+@layer components {
+  #pointsList {
+    border: 0.25rem solid theme(colors.slate.950);
+    border-top-width: 0;
+    padding: 1rem;
+    min-width: 5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 0.125rem;
+  }
+
+  #pointsList > * {
+    @apply bg-sky-500 text-sky-100 py-2 px-4 rounded-md shadow-md;
+  }
+}

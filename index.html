@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Convex Hull Visualization</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="flex min-h-svh bg-zinc-950 text-zinc-100">
+    <main class="flex flex-col items-center w-96 bg-sky-50 text-zinc-950">
+      <form id="pointsForm" class="grid p-12">
+        <div class="flex flex-col items-center">
+          <h1
+            class="text-2xl text-center border-b border-slate-950 mb-6 font-bold pb-2"
+          >
+            Convex Hull Visualization
+          </h1>
+          <div>
+            <label class="text-xl">Enter Point:</label>
+            <span class="text-2xl">(</span>
+            <input
+              type="number"
+              class="size-8 text-base bg-transparent rounded-md border border-slate-950 p-1"
+              id="xInput"
+              placeholder="X"
+              required
+            />
+            <span class="text-2xl">, </span>
+            <input
+              type="number"
+              class="size-8 text-base bg-transparent rounded-md border border-slate-950 p-1"
+              id="yInput"
+              placeholder="Y"
+              required
+            />
+            <span class="text-2xl">)</span>
+          </div>
+        </div>
+
+        <div class="grid items-center grid-cols-2 gap-4 mt-4">
+          <button
+            class="bg-slate-950 text-slate-100 px-6 py-2 rounded-md shadow-md text-sm"
+            type="button"
+            id="addPointBtn"
+          >
+            Add Point
+          </button>
+          <button
+            class="bg-slate-950 whitespace-nowrap text-slate-100 px-6 py-2 rounded-md shadow-md text-sm"
+            type="button"
+            id="computeAndDrawHullBtn"
+          >
+            Compute Shape
+          </button>
+        </div>
+      </form>
+
+      <div>
+        <ul id="pointsList"></ul>
+        <p>Input Points</p>
+      </div>
+    </main>
+
+    <section class="bg-grid flex-1 grid place-content-center">
+      <canvas id="canvas" width="500" height="500"></canvas>
+    </section>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
